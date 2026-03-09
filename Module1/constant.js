@@ -2,8 +2,7 @@
 
 export function testConstat()
 {
-
-//Other Data
+//Constant Data
 console.log("The Constant is" , DIVIDE_BY_TWO);
 
 }

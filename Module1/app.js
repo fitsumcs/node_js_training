@@ -4,9 +4,16 @@
 // import { testConstat }  from './constant.js'
 
 //Testing Arror Funciotns 
-import { testArrowFunction } from './arrowfunction.js'
-// Call the function
-testArrowFunction();
+// import { testArrowFunction } from './arrowfunction.js'
+// // Call the function
+// testArrowFunction();
+
+//Distractiuring 
+// import { testDistractiringArrays } from "./distractureingArrays.js";
+// //Test Distracturing
+// testDistractiringArrays();
+import { testDistractiringObj } from "./distractureingObj.js";
+testDistractiringObj()
 
 
 
