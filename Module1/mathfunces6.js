@@ -1,17 +1,27 @@
 // Adding two numbers 
 import { DIVIDE_BY_TWO } from './constant.js'
-export function addition(a,b)
+function addition(a,b)
 {
     return a + b;
 }
 //sub
-export function subtraction(a,b)
+function subtraction(a,b)
 {
     return a - b;
 }
+export function testModeulExportAndFunctions()
+{
 
-//div.  - > 0
-//mul. -> 2 
-//reminder 2  - > 
-//even odd ->  user reminder func 
+const res1 = addition(12,12);
+const res2 = subtraction(12,6);
+// ..reset of function calls 
+
+
+console.log("The Sum is : " , res1);
+console.log("The Sub is : ", res2 );
+// ...rest of outputs 
+
+}
+
+
 

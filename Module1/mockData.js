@@ -8,3 +8,12 @@ export const userData = {
     lastName : "LastName",
     age: 45
 }
+
+export function testObjectAndArray()
+{
+
+    console.log("List of items: ", listofItems);
+    console.log("User Data : ", userData);
+
+}
+
