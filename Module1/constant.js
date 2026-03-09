@@ -1,0 +1,3 @@
+export const DIVIDE_BY_TWO = 2;
+
+// .....
