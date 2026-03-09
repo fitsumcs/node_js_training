@@ -12,8 +12,10 @@
 // import { testDistractiringArrays } from "./distractureingArrays.js";
 // //Test Distracturing
 // testDistractiringArrays();
-import { testDistractiringObj } from "./distractureingObj.js";
-testDistractiringObj()
+// import { testDistractiringObj } from "./distractureingObj.js";
+// testDistractiringObj()
+import { testRestOpObjs } from "./restOpObj.js";
+testRestOpObjs()
 
 
 
