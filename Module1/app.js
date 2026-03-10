@@ -23,11 +23,11 @@
 
 
 //Async
-import { userData, asyncParallel  } from './async/userOrderAsync'
+import { processUser, loadDashboard  } from './async/userOrderAsync.js'
 //Call the functions 
 const userId = 12;
-await userData(userId);
-await asyncParallel(userId)
+await processUser(userId);
+await loadDashboard(userId)
 
 
 
