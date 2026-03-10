@@ -9,9 +9,9 @@ function SumNnumberOfNumber(...numbers)
 }
 
 //Multiplication 
-function MulNnumberOfNumber() // here
+function MulNnumberOfNumber(...numbers) // here
 {
-  const multiplication = 1;  //Logic will be here
+  const multiplication = numbers.reduce((a, b) => a + b, 1);  //Logic will be here
   return multiplication;
 }
 
