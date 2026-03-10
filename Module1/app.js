@@ -23,6 +23,11 @@
 
 
 //Async
+import { userData, asyncParallel  } from './async/userOrderAsync'
+//Call the functions 
+const userId = 12;
+await userData(userId);
+await asyncParallel(userId)
 
 
 
