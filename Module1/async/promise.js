@@ -14,7 +14,7 @@ return new Promise((resolve, reject) =>
 setTimeout(() => 
 { 
 
- const success = false;
+ const success = true;
  if (success) { resolve({ id: 1, name: 'Alice' }); } 
  else { reject(new Error('Failed to fetch')); } 
 
@@ -32,9 +32,13 @@ fetchData()
     console.log(data);
     }
 )
-.catch(err => console.log(err.message));
+.catch(err => console.log(err.message))
+.finally(()=>console.log("This always excute"));
+
 
 //How do u change this to Async await
+
+
 
 
 

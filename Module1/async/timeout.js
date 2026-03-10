@@ -7,7 +7,7 @@ function callback()
 }
 
 //SetTimeOut
-setTimeout((callback), timeout);
+setTimeout(callback, timeout);
 
 setTimeout(() => {
      console.log("This is arrow function with setimeout")
