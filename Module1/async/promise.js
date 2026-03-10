@@ -34,6 +34,8 @@ fetchData()
 )
 .catch(err => console.log(err.message));
 
+//How do u change this to Async await
+
 
 
 
