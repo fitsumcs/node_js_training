@@ -37,6 +37,26 @@ fetchData()
 
 
 //How do u change this to Async await
+async function AsyncExcute()
+{
+ try 
+ {
+    const dataAsync = await fetchData();
+    console.log("The Data ");
+    console.log(dataAsync);;
+ }
+ catch (err) {
+    console.log(err.message);
+ }
+ finally
+ {
+   console.log("This always excute");
+ }
+}
+
+//Run the aync func with await
+await AsyncExcute();
+
 
 
 
