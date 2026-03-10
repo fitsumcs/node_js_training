@@ -21,7 +21,17 @@ async function fetchUser(userId)
 async function fetchOrders(userId)
 {
  //Order : Filter : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+    return new Promise((resolve, reject) =>
+        {
+        setTimeout(() => 
+        { 
+        const success = true;
+        const result = orders.filter(order => order.userId == userId)
+        if (success) { resolve(result); } 
+        else { reject(new Error('Failed to fetch user data')); } 
+        }, 1000);
 
+    }); 
 
 }
 // Create an Async function to get calculate order 
@@ -29,6 +39,9 @@ async function calculateTotal(orders)
 {
    //Price : Various Looops : map , forEach, forloop, reduce 
    // To get the price paid 
+  const sum = orders.reduce((a, b) => a + b, 0);
+
+  return sum;
 
 }
 // Create a Async main function the calls this three functions and return user , order , totalOrder seq
@@ -57,11 +70,33 @@ export async function processUser(userId)
 async function fetchPosts(userId)
 {
  //Filter : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+  return new Promise((resolve, reject) =>
+        {
+        setTimeout(() => 
+        { 
+        const success = true;
+        const result = posts.filter(order => order.userId == userId)
+        if (success) { resolve(result); } 
+        else { reject(new Error('Failed to fetch user data')); } 
+        }, 1000);
+
+    }); 
 }
 // Create a Async function the get list of notifications 
 async function fetchNotifications(userId)
 {
  //Filter : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+  return new Promise((resolve, reject) =>
+        {
+        setTimeout(() => 
+        { 
+        const success = true;
+        const result = notifications.filter(order => order.userId == userId)
+        if (success) { resolve(result); } 
+        else { reject(new Error('Failed to fetch user data')); } 
+        }, 1000);
+
+    }); 
 
 }
 // Create a Async main funciton to get users, posts and notification in parraly 
@@ -71,7 +106,7 @@ export async function loadDashboard(userId)
     // Run in parallel, not sequentially
     const [user, posts, notifications] = await Promise.all([ fetchUser(userId), fetchPosts(userId), fetchNotifications(userId) ]); 
     
-    console.log("This is the Data");
+    console.log("This is the Data with promist all");
     console.log(user, posts, notifications);
     
     return { user, posts, notifications };
