@@ -17,9 +17,14 @@
 // import { testRestOpObjs } from "./restOpObj.js";
 // testRestOpObjs()
 
-import { testSumOfNumbers  } from './spreadSummation.js';
+// import { testSumOfNumbers  } from './spreadSummation.js';
 
-testSumOfNumbers();
+// testSumOfNumbers();
+
+
+//Async
+
+
 
 
 
