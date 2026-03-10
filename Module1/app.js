@@ -14,8 +14,12 @@
 // testDistractiringArrays();
 // import { testDistractiringObj } from "./distractureingObj.js";
 // testDistractiringObj()
-import { testRestOpObjs } from "./restOpObj.js";
-testRestOpObjs()
+// import { testRestOpObjs } from "./restOpObj.js";
+// testRestOpObjs()
+
+import { testSpreadOpArray  } from './spreadOpArray.js';
+
+testSpreadOpArray();
 
 
 
