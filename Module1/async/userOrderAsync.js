@@ -1,9 +1,10 @@
-import { userData, foodOrder, users, posts, notifications, users  } from '../mockData.js';
+import { userData, foodOrder, orders, users, posts, notifications, users  } from '../mockData.js';
 
 // Exc 1
 // Create an Async function to get User Data 
+
 // Create an Async function to get Order Data
-// Create an Aync function to get calculate order 
+// Create an Async function to get calculate order 
 // Create a Async main function the calls this three functions and return user , order , totalOrder seq
 
 // Exc 2

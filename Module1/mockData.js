@@ -23,7 +23,18 @@ export const foodOrder = {
       name : "Shero",
       orderNumber: 12,
       date: "",
-      hotel: "Mr x"
+      hotel: "Mr x",
+      price: 20,
+      currency: "ETB"
+}
+
+export const foodOrder2 = {
+      name : "Beyanet",
+      orderNumber: 13,
+      date: "",
+      hotel: "Mr y",
+      price: 40,
+      currency: "ETB"
 }
 
 export const post1 = {
@@ -48,6 +59,7 @@ export const notfication2 ={
     Icon: "Icon2"
 }
 
+export const orders = [foodOrder, foodOrder2];
 export const users =[userData, userData2];
 export const posts =[post1, post2];
 export const notifications = [notfication1,notfication2];
