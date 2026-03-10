@@ -11,6 +11,13 @@ export const userData = {
     age: 45
 }
 
+export const userData2 = {
+   
+    firsName : "Kebede",
+    lastName : "Abebe",
+    age: 24
+}
+
 //Oder Mock 
 export const foodOrder = {
       name : "Shero",
@@ -18,6 +25,32 @@ export const foodOrder = {
       date: "",
       hotel: "Mr x"
 }
+
+export const post1 = {
+    title : "Title of Post1",
+    body : "Text Body1",
+    createdAt: Date.UTC
+}
+export const post2 = {
+    title : "Title of Post1",
+    body : "Text Body1",
+    createdAt: Date.UTC
+}
+
+export const notfication1 ={
+    title: "Notification Title1",
+    body: "Notification Body1",
+    Icon: "Icon"
+} 
+export const notfication2 ={
+    title: "Notification Title2",
+    body: "Notification Body2",
+    Icon: "Icon2"
+}
+
+export const users =[userData, userData2];
+export const posts =[post1, post2];
+export const notifications = [notfication1,notfication2];
 
 export function testObjectAndArray()
 {
