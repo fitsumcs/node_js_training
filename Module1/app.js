@@ -17,9 +17,9 @@
 // import { testRestOpObjs } from "./restOpObj.js";
 // testRestOpObjs()
 
-import { testSpreadOpArray  } from './spreadOpArray.js';
+import { testSumOfNumbers  } from './spreadSummation.js';
 
-testSpreadOpArray();
+testSumOfNumbers();
 
 
 
