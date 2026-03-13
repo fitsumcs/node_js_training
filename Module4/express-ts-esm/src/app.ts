@@ -1,12 +1,14 @@
 import express from "express";
 
 import userRoutes from "./routes/user.routes.js";
+import { logger } from "./middleware/logger.js";
 
 const app = express();
 const PORT = 3000;
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(logger);         //This will log ur request 
 
 // Routes
 app.use("/users", userRoutes);
