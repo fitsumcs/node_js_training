@@ -1,4 +1,4 @@
-import { getUsersRepo, getUserByIdRepo, createUserRepo } from '../respositories/user.repository.js'
+import { getUsersRepo, getUserByIdRepo, createUserRepo } from "../respositories/user.repository";
 //user service 
 export const getUsersService = () => {
 
@@ -14,6 +14,7 @@ export const getUsersService = () => {
      statusCode: 200,
      error: null
   }
+  console.log("This is The response ");
   return response;
 
 };
