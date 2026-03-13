@@ -71,6 +71,12 @@ Main endpoints:
 - `GET /users/:id`
 - `POST /users`
 
+Current runtime setup (important):
+
+- Full ESM in Node (`"type": "module"`)
+- TypeScript Node ESM mode (`"module": "NodeNext"`, `"moduleResolution": "NodeNext"`)
+- Dev runner uses `tsx` (not `ts-node/esm` loader)
+
 Run module:
 
 ```bash
@@ -85,9 +91,15 @@ Build module:
 npm run build
 ```
 
+Start without watch:
+
+```bash
+npm run start
+```
+
 ## TypeScript Import Rule (Important)
 
-This repository demonstrates both common setups:
+This repository demonstrates both common setups. Module 4 is currently using full ESM.
 
 - **CommonJS runtime** (`module: CommonJS`) can use extensionless imports in TS:
   - `import { x } from "./file"`
@@ -95,6 +107,12 @@ This repository demonstrates both common setups:
   - usually `import { x } from "./file.js"` in TS source
 
 If imports fail with "Cannot find module", check your module system config (`tsconfig.json` + `package.json`) first.
+
+## Module 4 Troubleshooting
+
+- If you see `Cannot find module ...` in Module 4, verify relative imports include `.js` in TS files.
+- If you see Node loader experimental warnings, use `npm run dev` (tsx-based) instead of custom `node --loader ts-node/esm` commands.
+- After changing scripts or config, stop and restart the dev server.
 
 ## Training Workflow
 
