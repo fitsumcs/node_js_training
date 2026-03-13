@@ -108,7 +108,7 @@ This repository demonstrates both common setups. Module 4 is currently using ful
 
 If imports fail with "Cannot find module", check your module system config (`tsconfig.json` + `package.json`) first.
 
-## Module 4 Troubleshooting
+## Troubleshooting
 
 - If you see `Cannot find module ...` in Module 4, verify relative imports include `.js` in TS files.
 - If you see Node loader experimental warnings, use `npm run dev` (tsx-based) instead of custom `node --loader ts-node/esm` commands.
