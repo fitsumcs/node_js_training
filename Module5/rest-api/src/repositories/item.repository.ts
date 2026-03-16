@@ -56,9 +56,9 @@ export const createItemRepo = (item:any) => {
 
   //Hit the Db
   //create the item
-
   //Get the Last Id 
   //Create new Id by incremeting one on the last Id
+  // check the item name is unique
   const id = 4;
   const createdItem = 
     {
@@ -80,6 +80,8 @@ export const updateItemRepo = (id:any, item:any) => {
   //Get the index 
   //That is not deleted 
    const index = items.findIndex(item => item.id === id);
+  // Verify it is not repeated 
+  // Update the updatedAt
   //Undate the data
    items[index] = { ...items[index], ...item }  
    const data = items[index];
