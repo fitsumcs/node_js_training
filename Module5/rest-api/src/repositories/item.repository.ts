@@ -94,8 +94,8 @@ export const deleteItemRepo = (id:any) => {
    const index = items.findIndex(item => item.id == id);
    //Undate the isDeleted
    //Soft Delete
-  //  const isDeleted =  true;
+   const isDeleted =  true;
 
-   items[index] = { ...items[index], isDeleted : true }  
+   items[index] = { ...items[index], isDeleted }  
    return items[index];
 };
