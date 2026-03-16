@@ -1,7 +1,7 @@
 //item repo 
 
 //Data Here
-const items = 
+const items  = 
 [
   {
     id : 1,
@@ -10,8 +10,7 @@ const items =
     amountInStore: 12,
     createAt: Date.UTC,
     updateAt: Date.UTC,
-    isDelete : false,
-    delteAt : null
+    isDeleted : false,
   },
   {
     id : 2,
@@ -20,8 +19,7 @@ const items =
     numberInStore: 12,
     createAt: Date.UTC,
     updateAt: Date.UTC,
-    isDelete : false,
-    delteAt : null
+    isDeleted : false
   },
   {
     id : 3,
@@ -30,8 +28,7 @@ const items =
     numberInStore: 12,
     createAt: Date.UTC,
     updateAt: Date.UTC,
-    isDelete : false,
-    delteAt : null
+    isDeleted : false
   }
 ]
 
@@ -58,8 +55,7 @@ export const createItemRepo = (item:any) => {
   //create the item
   //Get the Last Id 
   //Create new Id by incremeting one on the last Id
-  // check the item name is unique
-  const id = 4;
+  const id = items.length + 1;
   const createdItem = 
     {
       ...item,
@@ -70,9 +66,9 @@ export const createItemRepo = (item:any) => {
     delteAt : null
     }
 
-   items.push(item)
+   items.push(createdItem)
 
-   return item;
+   return createdItem;
 };
 
 export const updateItemRepo = (id:any, item:any) => {
@@ -80,10 +76,13 @@ export const updateItemRepo = (id:any, item:any) => {
   //Get the index 
   //That is not deleted 
    const index = items.findIndex(item => item.id === id);
+   // Update the updatedAt
+   const updatedAt = Date.UTC;
   // Verify it is not repeated 
-  // Update the updatedAt
+
   //Undate the data
-   items[index] = { ...items[index], ...item }  
+   items[index] = { ...items[index], updatedAt,  ...item }  
+  
    const data = items[index];
 
    return data;
@@ -92,11 +91,12 @@ export const updateItemRepo = (id:any, item:any) => {
 export const deleteItemRepo = (id:any) => {
 
   //Grab the Data by Id
-  //Get the ID
-  //pop it 
-  // soft delete  == 
-  // isDelete : false,
-  // delteAt : Date.UTC
+
+   const index = items.findIndex(item => item.id === id);
+   //Undate the isDeleted
+   //Soft Delete
+   const isDeleted = true;
+   items[index] = { ...items[index], isDeleted }  
    const filtedData = items.filter(item => item.id !== id); 
    return filtedData;
 };
