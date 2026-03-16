@@ -1,7 +1,4 @@
 //item repo 
-
-import { log } from "console";
-
 //Data Here
 const items  = 
 [
