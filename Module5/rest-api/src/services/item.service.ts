@@ -64,7 +64,7 @@ export const updateItemService = (id: any, item:any) => {
       data : data, 
      status: "sucess",
      message: "User Updated!",
-     statusCode: 201,
+     statusCode: 200,
      error: null
   }
 

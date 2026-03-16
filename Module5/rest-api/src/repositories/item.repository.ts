@@ -1,5 +1,7 @@
 //item repo 
 
+import { log } from "console";
+
 //Data Here
 const items  = 
 [
@@ -75,13 +77,13 @@ export const updateItemRepo = (id:any, item:any) => {
 
   //Get the index 
   //That is not deleted 
-   const index = items.findIndex(item => item.id === id);
+   const index = items.findIndex(item => item.id == id);
    // Update the updatedAt
    const updatedAt = Date.UTC;
   // Verify it is not repeated 
-
+  
   //Undate the data
-   items[index] = { ...items[index], updatedAt,  ...item }  
+   items[index] = { ...items[index], ...item, updatedAt }  
   
    const data = items[index];
 
@@ -92,11 +94,11 @@ export const deleteItemRepo = (id:any) => {
 
   //Grab the Data by Id
 
-   const index = items.findIndex(item => item.id === id);
+   const index = items.findIndex(item => item.id == id);
    //Undate the isDeleted
    //Soft Delete
-   const isDeleted = true;
-   items[index] = { ...items[index], isDeleted }  
-   const filtedData = items.filter(item => item.id !== id); 
-   return filtedData;
+  //  const isDeleted =  true;
+
+   items[index] = { ...items[index], isDeleted : true }  
+   return items[index];
 };

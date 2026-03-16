@@ -14,6 +14,7 @@ export const getItems = (req: Request, res: Response) => {
 export const getItemById = (req: Request, res: Response) => {
 
   const { id } = req.params;
+   
   const response = getItemByIdService(id);
 
   res.json(response);
@@ -32,6 +33,8 @@ export const updateItem = (req: Request, res: Response) => {
   
    const item = req.body;
    const { id } = req.params;
+
+   
    const response = updateItemService(id,item);
 
   res.status(200).json(response);
