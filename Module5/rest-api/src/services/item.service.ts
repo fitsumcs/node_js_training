@@ -1,5 +1,6 @@
-import { getItemsRepo, getItemByIdRepo, createItemRepo, updateItemRepo, deleteItemRepo } from "../repositories/item.repository";
 //user service 
+import { getItemsRepo, getItemByIdRepo, createItemRepo, updateItemRepo, deleteItemRepo } from "../repositories/item.repository";
+
 export const getItemsService = () => {
 
 
@@ -38,9 +39,6 @@ export const getItemByIdService = (id:any) => {
 
 export const createItemService = (user:any) => {
 
-  console.log("This is The body ");
-  console.log(user);
-
   const data = createItemRepo(user);
 
   //Map , shape of reponse 
@@ -56,19 +54,16 @@ export const createItemService = (user:any) => {
   return response;
 };
 
-export const updateItemService = (user:any) => {
+export const updateItemService = (id: any, item:any) => {
 
-  console.log("This is The body ");
-  console.log(user);
-
-  const data = updateItemRepo(user);
+  const data = updateItemRepo(id, item);
 
   //Map , shape of reponse 
    const response = 
    {
       data : data, 
      status: "sucess",
-     message: "User created!",
+     message: "User Updated!",
      statusCode: 201,
      error: null
   }
@@ -76,20 +71,17 @@ export const updateItemService = (user:any) => {
   return response;
 };
 
-export const deleteItemService = (user:any) => {
+export const deleteItemService = (id:any) => {
 
-  console.log("This is The body ");
-  console.log(user);
-
-  const data = deleteItemRepo(user);
+  const data = deleteItemRepo(id);
 
   //Map , shape of reponse 
    const response = 
    {
       data : data, 
      status: "sucess",
-     message: "User created!",
-     statusCode: 201,
+     message: "User Deleted!",
+     statusCode: 204,
      error: null
   }
 

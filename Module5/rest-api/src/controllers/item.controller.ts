@@ -14,8 +14,6 @@ export const getItems = (req: Request, res: Response) => {
 export const getItemById = (req: Request, res: Response) => {
 
   const { id } = req.params;
-  // {k : v} {id : id} => {id}
-  //Validation
   const response = getItemByIdService(id);
 
   res.json(response);
@@ -23,38 +21,28 @@ export const getItemById = (req: Request, res: Response) => {
 };
 
 export const createItem = (req: Request, res: Response) => {
-  const user = req.body;
-  
-  //Validation 
-  // console.log("This is The body ");
-  // console.log(user);
+  const item = req.body;
 
-   const response = createItemService(user);
+   const response = createItemService(item);
 
   res.status(201).json(response);
 };
 
 export const updateItem = (req: Request, res: Response) => {
-  const user = req.body;
   
-  //Validation 
-  // console.log("This is The body ");
-  // console.log(user);
+   const item = req.body;
+   const { id } = req.params;
+   const response = updateItemService(id,item);
 
-   const response = updateItemService(user);
-
-  res.status(201).json(response);
+  res.status(200).json(response);
 };
 
 export const deleteItem = (req: Request, res: Response) => {
-  const user = req.body;
   
-  //Validation 
-  // console.log("This is The body ");
-  // console.log(user);
+   const { id } = req.params;
 
-   const response = deleteItemService(user);
+   const response = deleteItemService(id);
 
-  res.status(201).json(response);
+  res.status(204).json(response);
 };
 

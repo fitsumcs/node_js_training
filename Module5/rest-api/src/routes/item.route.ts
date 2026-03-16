@@ -6,11 +6,11 @@ import { getItems, getItemById, createItem, updateItem,deleteItem } from "../con
 
 const router = Router();
 
-router.get("/", getItems);
-router.get("/:id", getItemById);
-router.post("/", createItem);
-router.put("/", updateItem);
-router.delete("/:id", deleteItem);
+router.get("/", getItems);           //List of Items
+router.get("/:id", getItemById);     //Get Item by Id
+router.post("/", createItem);        //Create Item
+router.put("/:id", updateItem);         //Update Item
+router.delete("/:id", deleteItem);   //Delete Item
 
 
 export default router
