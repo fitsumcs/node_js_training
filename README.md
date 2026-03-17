@@ -185,6 +185,12 @@ Main endpoints:
 - `PUT /users/:id`
 - `DELETE /users/:id`
 
+Postman collection:
+
+- Collection file: `PostmanCollection/v1/Node Training.postman_collection.json`
+- Import it into Postman via **Import -> File**.
+- Start the Module 7 server (`npm run dev`) before sending requests.
+
 ## TypeScript Import Rule (Important)
 
 This repository demonstrates both common setups. Module 4 is currently using full ESM.
