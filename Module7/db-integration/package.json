@@ -8,7 +8,10 @@
     "build": "tsc",
     "start": "tsx src/app.ts",
     "dev": "tsx watch src/app.ts",
-    "rundev": "npm run  build && nodemon dist/app.js"
+    "rundev": "npm run  build && nodemon dist/app.js",
+    "migrate": "prisma migrate dev --name init",
+    "seed": "prisma db seed"
+
   },
   "keywords": [],
   "author": "",
