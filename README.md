@@ -185,11 +185,11 @@ Main endpoints:
 - `PUT /users/:id`
 - `DELETE /users/:id`
 
-Postman collection:
+## Postman Collection
 
 - Collection file: `PostmanCollection/v1/Node Training.postman_collection.json`
-- Import it into Postman via **Import -> File**.
-- Start the Module 7 server (`npm run dev`) before sending requests.
+- This collection is shared across modules.
+- Import it in Postman via **Import -> File**, then run the target module before sending requests.
 
 ## TypeScript Import Rule (Important)
 
