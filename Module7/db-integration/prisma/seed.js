@@ -1,8 +1,12 @@
+require("dotenv").config();
 const { PrismaClient } = require("@prisma/client");
 const { Pool } = require("pg");
 const { PrismaPg } = require("@prisma/adapter-pg");
 
 // PostgreSQL pool
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL is not set. Add it to your .env file.");
+}
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 // Prisma adapter for v7

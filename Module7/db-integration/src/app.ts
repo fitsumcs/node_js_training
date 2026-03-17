@@ -1,5 +1,6 @@
+import "dotenv/config";
 const express = require("express");
- import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { errorHandler } from './middleware/error.middleware';
 
 const { PrismaClient } = require("@prisma/client");
@@ -7,6 +8,9 @@ const { Pool } = require("pg");
 const { PrismaPg } = require("@prisma/adapter-pg");
 
 // PostgreSQL connection
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL is not set. Add it to your .env file.");
+}
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const adapter = new PrismaPg(pool, { schema: "users" });
 const prisma = new PrismaClient({ adapter });
