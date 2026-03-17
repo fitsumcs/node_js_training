@@ -7,5 +7,11 @@ export const UserSchema = z.object(
    email: z.string().email(),
    password: z.string().min(8),
    phoneNumber:z.string().optional(),  //adding optional field
-   role : z.string().default("guest")  // adding a field with default value -> it means it is optional 
+   role : z.string().default("guest"),  // adding a field with default value -> it means it is optional 
+   address : z.object(                                                        //nested object
+      {
+            city : z.string(),
+            country:z.string()
+      }),
+   intereset : z.array( z.object({ name:z.string() , category:z.string() }))  // array 
 });
