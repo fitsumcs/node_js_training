@@ -11,7 +11,11 @@ export const UserSchema = z.object(
    address : z.object(                                                        //nested object
       {
             city : z.string(),
-            country:z.string()
+            country:z.string().refine(val => val.startsWith("Eth") , { error : "Must Be Ethiopia" })
       }),
-   intereset : z.array( z.object({ name:z.string() , category:z.string() }))  // array 
+   intereset : z.array( z.object({ name:z.string() , category:z.string() })),  // array 
+   uuid: z.uuid(),
+   website: z.url(),
+   birthDate:z.iso.date()
+
 });
