@@ -7,6 +7,7 @@ export const UserSchema = z.object(
    email: z.string().email(),
    password: z.string().min(8),
    phoneNumber:z.string().optional(),  //adding optional field
+   confirmPassword: z.string().optional(),
    role : z.string().default("guest"),  // adding a field with default value -> it means it is optional 
    address : z.object(                                                        //nested object
       {
@@ -16,6 +17,6 @@ export const UserSchema = z.object(
    intereset : z.array( z.object({ name:z.string() , category:z.string() })),  // array 
    uuid: z.uuid(),
    website: z.url(),
-   birthDate:z.iso.date()
+   birthDate:z.iso.date(),
 
-});
+}).refine(data => data.password === data.confirmPassword, { error : "Password does not match!"});
