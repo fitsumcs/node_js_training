@@ -97,6 +97,94 @@ Start without watch:
 npm run start
 ```
 
+### Module 5 - REST API Basics (`Module5/rest-api`)
+
+Focus: build a simple layered REST API with validation.
+
+Highlights:
+
+- Layered structure: `routes -> controllers -> services -> repositories`.
+- Item-focused API under `/items`.
+- Zod request validation middleware.
+- TypeScript + Express dev workflow with `tsx`.
+
+Run module:
+
+```bash
+cd Module5/rest-api
+npm install
+npm run dev
+```
+
+Build and run once:
+
+```bash
+npm run build
+npm run start
+```
+
+### Module 6 - Zod Validation Patterns (`Module6/zod-validation`)
+
+Focus: compare Zod `parse`, `safeParse`, and middleware-based validation.
+
+Highlights:
+
+- Direct validation endpoint examples.
+- Structured error/data response with `safeParse`.
+- Reusable validation middleware pattern.
+- User payload schema practice.
+
+Main endpoints:
+
+- `POST /zod-test`
+- `POST /zod-test-safe`
+- `POST /zod-test-middleware`
+
+Run module:
+
+```bash
+cd Module6/zod-validation
+npm install
+npm run dev
+```
+
+### Module 7 - DB Integration with Prisma (`Module7/db-integration`)
+
+Focus: PostgreSQL integration using Express, Prisma v7, and the Prisma PG adapter.
+
+Highlights:
+
+- CRUD endpoints for `users` and related `posts`.
+- Prisma schema + migrations in `prisma/`.
+- Prisma runtime adapter via `@prisma/adapter-pg`.
+- Env-based DB connection using `DATABASE_URL`.
+
+Run module:
+
+```bash
+cd Module7/db-integration
+npm install
+npx prisma generate
+npm run migrate
+npm run dev
+```
+
+Seed sample data:
+
+```bash
+cd Module7/db-integration
+npm run seed
+```
+
+Main endpoints:
+
+- `GET /`
+- `GET /users`
+- `GET /users/:id`
+- `POST /users`
+- `PUT /users/:id`
+- `DELETE /users/:id`
+
 ## TypeScript Import Rule (Important)
 
 This repository demonstrates both common setups. Module 4 is currently using full ESM.
@@ -113,6 +201,8 @@ If imports fail with "Cannot find module", check your module system config (`tsc
 - If you see `Cannot find module ...` in Module 4, verify relative imports include `.js` in TS files.
 - If you see Node loader experimental warnings, use `npm run dev` (tsx-based) instead of custom `node --loader ts-node/esm` commands.
 - After changing scripts or config, stop and restart the dev server.
+- If you see `Cannot find module '.prisma/client/default'` in Module 7, regenerate Prisma client with `npx prisma generate` and ensure `prisma/schema.prisma` uses `provider = "prisma-client-js"` for the `generator client`.
+- If you see `SASL: ... client password must be a string`, verify `DATABASE_URL` in `.env` is set correctly and loaded before creating the PostgreSQL `Pool`.
 
 ## Training Workflow
 
