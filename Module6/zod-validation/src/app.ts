@@ -1,7 +1,7 @@
 import express from "express";
 
 import { UserSchema } from "./schema/user.schema";
-import { log } from "console";
+import { validate } from "./middleware/validate.middleware";
 
 const app = express();
 const PORT = 3000;
@@ -50,6 +50,42 @@ app.post("/zod-test-safe", (req, res) =>
     {
        res.status(400).send(response);
     }
+
+});
+
+app.post("/zod-test-safe", (req, res) => 
+{
+
+   const user = req.body;
+
+   const { success, error, data } = UserSchema.safeParse(user);
+
+   console.log("The Result is");
+   console.log(success, error, data );
+
+   //Formatted Response 
+    const response =  
+    {
+      status : success || false,
+      data : data || null,
+      error : error || null
+    }
+
+   if(success)
+   {
+    res.send(response);
+   }
+   else 
+    {
+       res.status(400).send(response);
+    }
+
+});
+
+app.post("/zod-test-safe-middleware", validate(UserSchema),  (req, res) => 
+{
+    const user = req.body;
+    res.send(user);
 
 });
 
