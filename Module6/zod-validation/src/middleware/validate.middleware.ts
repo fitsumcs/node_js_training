@@ -15,7 +15,8 @@
             return res.status(400).json({ error: 'Validation failed', details: result.error }); 
 
         }
-        // Pass to next layer
+        // Pass to next layer with the updated data
+        req.body = result.data;
         next(); 
       }; 
 };

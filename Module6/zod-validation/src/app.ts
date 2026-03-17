@@ -82,7 +82,7 @@ app.post("/zod-test-safe", (req, res) =>
 
 });
 
-app.post("/zod-test-safe-middleware", validate(UserSchema),  (req, res) => 
+app.post("/zod-test-middleware", validate(UserSchema),  (req, res) => 
 {
     const user = req.body;
     res.send(user);

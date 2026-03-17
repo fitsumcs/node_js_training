@@ -2,7 +2,7 @@ import { z } from "zod"
 
 export const UserSchema = z.object(
 {
-   name : z.string().min(3) ,
+   name : z.string().min(3).transform(val => val.toUpperCase()) ,
    age : z.number().min(18) ,
    email: z.string().email(),
    password: z.string().min(8),
