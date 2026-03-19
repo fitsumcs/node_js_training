@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 import { Auth } from '../interface/auth.interface';
 import { config } from '../config/env.config';
 
-
 export function authMiddleware(req : Auth, res: Response, next : NextFunction) {
   const authHeader = req.headers.authorization;
   const { JWT_SECRET }= config;
@@ -19,6 +18,8 @@ export function authMiddleware(req : Auth, res: Response, next : NextFunction) {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET)
+    console.log(decoded);
+    
     req.user = decoded
     next()
   } catch (err) {

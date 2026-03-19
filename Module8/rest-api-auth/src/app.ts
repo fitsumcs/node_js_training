@@ -3,8 +3,10 @@ import express from "express";
 import itemRoutes from "./routes/item.route";
 import authRoutes from './routes/auth.route';
 
+import { config } from "./config/env.config";
+
 const app = express();
-const PORT = 3000;
+const { PORT }  = config;
 
 // Middleware to parse JSON
 app.use(express.json());
