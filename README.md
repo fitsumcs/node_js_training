@@ -1,12 +1,13 @@
 # Node Training Repository
 
-Hands-on training material for modern JavaScript, Node.js internals, and Express with TypeScript.
+Hands-on training material for modern JavaScript, Node.js internals, Express + TypeScript APIs, testing, auth, and API docs.
 
 ## Learning Goals
 
 - Practice modern JavaScript syntax and patterns.
 - Understand Node.js runtime behavior (event loop, streams, workers).
 - Build layered APIs with Express + TypeScript.
+- Practice API authentication, testing, and documentation workflows.
 - Understand CommonJS vs ESM trade-offs in TypeScript projects.
 
 ## Repository Modules
@@ -185,6 +186,99 @@ Main endpoints:
 - `PUT /users/:id`
 - `DELETE /users/:id`
 
+### Module 8 - REST API Auth (`Module8/rest-api-auth`)
+
+Focus: add authentication and route protection to a layered REST API.
+
+Highlights:
+
+- Item CRUD routes under `/items`.
+- Auth routes for register/login/profile under `/auth`.
+- Password hashing with `bcrypt`.
+- JWT token generation and verification middleware.
+- Env-based settings (`PORT`, `JWT_SECRET`).
+
+Main endpoints:
+
+- `POST /auth/register`
+- `POST /auth/login`
+- `GET /auth/profile` (protected)
+- `GET /items`
+- `GET /items/:id`
+- `POST /items`
+- `PUT /items/:id`
+- `DELETE /items/:id`
+
+Run module:
+
+```bash
+cd Module8/rest-api-auth
+npm install
+npm run dev
+```
+
+Env setup:
+
+- Copy values from `src/env.example` into a local `.env`.
+
+### Module 9 - Express Test Lab (`Module9/express-test-lab`)
+
+Focus: test Express APIs and utility functions with unit and integration tests.
+
+Highlights:
+
+- Integration tests for API routes using `supertest`.
+- Unit tests for utility functions using `vitest`.
+- Coverage reporting with `vitest --coverage`.
+
+Main endpoints:
+
+- `GET /users`
+- `POST /users`
+
+Run module:
+
+```bash
+cd Module9/express-test-lab
+npm install
+npm run dev
+```
+
+Run tests:
+
+```bash
+npm test
+npm run test:coverage
+```
+
+### Module 11 - REST API Documentation (`Module11/rest-api-doc`)
+
+Focus: generate and serve API documentation for an Express REST API.
+
+Highlights:
+
+- Item CRUD routes under `/items`.
+- Swagger UI from JSDoc annotations at `/api-docs`.
+- Swagger UI from OpenAPI YAML file at `/api-docs/yaml`.
+
+Main endpoints:
+
+- `GET /items`
+- `GET /items/:id`
+- `POST /items`
+- `PUT /items/:id`
+- `DELETE /items/:id`
+- `GET /api-docs`
+- `GET /api-docs/yaml`
+
+Run module:
+
+```bash
+cd Module11/rest-api-doc
+npm install
+npm run dev
+```
+
 ## Postman Collection
 
 - Collection file: `PostmanCollection/v1/Node Training.postman_collection.json`
@@ -209,6 +303,8 @@ If imports fail with "Cannot find module", check your module system config (`tsc
 - After changing scripts or config, stop and restart the dev server.
 - If you see `Cannot find module '.prisma/client/default'` in Module 7, regenerate Prisma client with `npx prisma generate` and ensure `prisma/schema.prisma` uses `provider = "prisma-client-js"` for the `generator client`.
 - If you see `SASL: ... client password must be a string`, verify `DATABASE_URL` in `.env` is set correctly and loaded before creating the PostgreSQL `Pool`.
+- If Module 8 auth requests fail with token errors, check `JWT_SECRET` and ensure you pass `Authorization: Bearer <token>`.
+- If Module 9 tests fail after API changes, update both integration tests in `tests/integration` and route logic in `src/routes`.
 
 ## Training Workflow
 
