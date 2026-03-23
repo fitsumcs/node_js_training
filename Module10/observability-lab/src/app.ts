@@ -1,5 +1,5 @@
 import express from 'express';
-import * as Sentry from '@sentry/node';
+import Sentry from './lib/sentry';
 import routes from './routes';
 import { requestLogger } from './middleware/requestLogger';
 
